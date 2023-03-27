@@ -7,7 +7,7 @@ const cheerio = require("cheerio");
 app.use(cors());
 app.use(express.json());
 
-const baseURL = "https://google.com/search?q=weather+in";
+const baseURL = "https://google.com/search?q=weather+in+";
 
 app.get("/weather/:id", (req, res) => {
   const { id } = req.params;
@@ -24,7 +24,7 @@ app.get("/weather/:id", (req, res) => {
         .eq(0)
         .text()
         .trim()
-        .split("\n")[0];
+        .split("\n")[0].split("\u202f")[0];
       const status = $('div[class="BNeawe tAd8D AP7Wnd"]')
         .eq(0)
         .text()
