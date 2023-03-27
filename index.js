@@ -24,12 +24,10 @@ app.get("/weather/:id", (req, res) => {
         .eq(0)
         .text()
         .trim()
-        .split("\n")[0].split("\u202f")[0].split(" ")[1];
+        .split("\n")[0]?.split(" ")[1];
       const status = $('div[class="BNeawe tAd8D AP7Wnd"]')
         .eq(0)
-        .text()
-        .trim()
-        .split("\n")[1];
+        .text();
 
       if (temperature) {
         res.json({
