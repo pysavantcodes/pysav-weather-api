@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const cheerio = require("cheerio");
 
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 
 const baseURL = "https://google.com/search?q=weather+in+";
