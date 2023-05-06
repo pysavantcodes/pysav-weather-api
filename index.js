@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const baseURL = "https://google.com/search?q=weather+in+";
+const PORT = 5000;
 
 app.get("/weather/:id", (req, res) => {
   const { id } = req.params;
@@ -50,6 +51,6 @@ app.get("/weather/:id", (req, res) => {
   getHTML();
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("server is running");
 });
